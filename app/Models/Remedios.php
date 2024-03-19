@@ -13,6 +13,11 @@ class Remedios extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'nome', 'horario', 'dia', 'descricao', 'key'
+       'id', 'nome', 'horario', 'dia', 'descricao', 'key'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

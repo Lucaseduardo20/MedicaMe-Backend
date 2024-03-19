@@ -13,6 +13,7 @@ class UserController extends Controller
     public function create(Request $request)
     {
         $user = new User([
+            'id' => $request->id,
             'nome' => $request->nome,
             'email' => $request->email,
             'password' => $request->password ? Hash::make($request->password) : null,

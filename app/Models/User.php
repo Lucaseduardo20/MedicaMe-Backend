@@ -15,10 +15,15 @@ class User extends Authenticatable
     public $timestamps = false;
 
     protected $fillable = [
-        'nome' ,'email', 'password'
+        'id', 'nome' ,'email', 'password'
     ];
 
     protected $hidden = [
         'password'
     ];
+
+    public function remedios()
+    {
+        return $this->hasMany(Remedios::class);
+    }
 }
